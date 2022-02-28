@@ -1,3 +1,11 @@
 #brand-name span {
     color:#800080;
 }
+
+#search-button {
+    background-color: #800080;
+    color: white;
+}
+#search-button:hover {
+    background-color: #a853a8;
+}
