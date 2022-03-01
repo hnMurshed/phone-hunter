@@ -113,6 +113,10 @@ const displayPhoneDetails = phone => {
                 <ul id="main-features"></ul>
                 <p class="m-0 fw-bold my-3">Others:</p>
                 <ul id="others"></ul>
+                <div class="d-flex justify-content-end">
+                    <button id="close-btn" class="btn btn-secondary">Close</button>
+                    <button id="buynow-btn" class="btn btn-primary ms-2">Buy Now</button>
+                </div>
             </div>
         </div>
     `;

@@ -35,6 +35,16 @@
 #phone-detail-card {
     width: 38rem;
 }
+#close-btn {
+    border: none;
+}
+#buynow-btn {
+    background-color: deeppink;
+    border: none;
+}
+#buynow-btn:hover {
+    background-color: rgb(177, 9, 98);
+}
 
 /* phones container / search results */
 #phones-container .phone img {
