@@ -5,7 +5,7 @@
 
 /* search input group */
 #input-group {
-    width: 54.5%;
+    width: 38rem;
 }
 #search-button {
     background-color: #800080;
@@ -29,6 +29,11 @@
 /* not found message */
 #not-found-message {
     display: none;
+}
+
+/* phone details */
+#phone-detail-card {
+    width: 38rem;
 }
 
 /* phones container / search results */
@@ -61,6 +66,10 @@
 }
 @media screen and (max-width: 768px) {
     #input-group {
+        width: 100%;
+    }
+
+    #phone-detail-card {
         width: 100%;
     }
 }

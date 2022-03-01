@@ -103,7 +103,7 @@ const displayPhoneDetails = phone => {
 
     // displaying phone details
     div.innerHTML = `
-        <div class="card" style="width: 38rem;">
+        <div id="phone-detail-card" class="card">
         <img width="350px" src="${phone.image}" class="mx-auto mt-3 img-fluid" alt="${phone.name}">
             <div class="card-body">
                 <h4 class="card-title">${phone.name}</h4>
