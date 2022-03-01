@@ -8,9 +8,17 @@ const getSearchText = () => {
     const searchText = searchInput.value;
     loadPhones(searchText);
 
+    // clear search input
     searchInput.value = '';
+
+    // display spinner
     displayControl('spinner', 'block');
+
+    // hide all phones
     displayControl('phones-container', 'none');
+
+    // hide not found message
+    document.getElementById('not-found-message').style.display = 'none';
 }
 
 // load phones
@@ -30,6 +38,10 @@ const displayPhones = phones => {
     
     const phonesContainer = document.getElementById('phones-container');
     phonesContainer.textContent = '';
+
+    if (phones.length === 0) {
+        document.getElementById('not-found-message').style.display = 'block';
+    }
 
     // displaying all phones
     phones.forEach(phone => {

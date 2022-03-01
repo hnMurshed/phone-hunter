@@ -23,6 +23,12 @@
 #spinner {
     display: none;
     color:#800080;
+    margin-top: 50px;
+}
+
+/* not found message */
+#not-found-message {
+    display: none;
 }
 
 /* phones container / search results */
