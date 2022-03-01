@@ -23,10 +23,18 @@
     <main class="container">
         <section>
             <!-- search input and button -->
-            <div class="input-group input-group-lg mb-3">
+            <div class="input-group input-group-lg mb-4 mx-auto" style="width: 38rem;">
                 <input id="search-input" type="text" class="form-control" placeholder="Search phone" aria-label="Search phone" aria-describedby="search-button">
                 <button onclick="getSearchText()" class="btn btn-outline-secondary" type="button" id="search-button">Search</button>
             </div>
+
+            <!-- phone details -->
+            <div id="phone-details" class="card mx-auto" style="width: 28rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+              </div>
 
             <!-- search result -->
             <div id="phones-container" class="row row-cols-1 row-cols-md-3 g-4 my-4">
