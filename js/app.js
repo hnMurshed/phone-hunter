@@ -1,3 +1,7 @@
+const displayControl = (id, displayStyle) => {
+    document.getElementById(id).style.display = displayStyle;
+}
+
 // getting searchText
 const getSearchText = () => {
     const searchInput = document.getElementById('search-input');
@@ -5,6 +9,8 @@ const getSearchText = () => {
     loadPhones(searchText);
 
     searchInput.value = '';
+    displayControl('spinner', 'block');
+    displayControl('phones-container', 'none');
 }
 
 // load phones
@@ -14,10 +20,14 @@ const loadPhones = (searchText) => {
     fetch(url)
     .then(res => res.json())
     .then(data => displayPhones(data.data))
+
+    // clear phone details text content
+    document.getElementById('phone-details').textContent = '';
 }
 
 // display phones
 const displayPhones = phones => {
+    
     const phonesContainer = document.getElementById('phones-container');
     phonesContainer.textContent = '';
 
@@ -38,6 +48,10 @@ const displayPhones = phones => {
             </div>
         `
     })
+    // hide spinnre
+    displayControl('spinner', 'none');
+    // display phones
+    displayControl('phones-container', 'flex');
 }
 
 // load phone details
@@ -49,7 +63,6 @@ const phoneDetails = phoneId => {
 }
 // display phone details
 const displayPhoneDetails = phone => {
-    console.log(phone);
     const phoneDetailsField = document.getElementById('phone-details');
     phoneDetailsField.textContent = '';
 
@@ -61,11 +74,11 @@ const displayPhoneDetails = phone => {
     // displaying phone details
     div.innerHTML = `
         <div class="card" style="width: 38rem;">
-        <img width="350px" src="${phone.image}" class="mx-auto mt-3" alt="${phone.name}">
+        <img width="350px" src="${phone.image}" class="mx-auto mt-3 img-fluid" alt="${phone.name}">
             <div class="card-body">
                 <h4 class="card-title">${phone.name}</h4>
                 <p class="m-0"><span class="fw-bold">Brand: </span>${phone.brand}</p>
-                <p class="m-0"><span class="fw-bold">Release Date: </span>${phone.releaseDate ? phone.releaseDate: 'Null'}</p>
+                <p class="m-0"><span class="fw-bold">Release Date: </span>${phone.releaseDate ? phone.releaseDate: 'No release date found'}</p>
                 <p class="m-0 fw-bold my-3">Main Features:</p>
                 <ul id="main-features"></ul>
                 <p class="m-0 fw-bold my-3">Others:</p>
@@ -74,25 +87,21 @@ const displayPhoneDetails = phone => {
         </div>
     `;
 
-    // showing main features
-    const featuresField = document.getElementById('main-features');
-    for (const prop in phone.mainFeatures) {
-        console.log(prop);
-        console.log(phone.mainFeatures[prop]);
-        const li = document.createElement('li');
-        featuresField.appendChild(li);
-
-        li.innerHTML = `<span class="fw-bold">${prop}: </span>${phone.mainFeatures[prop]}`;
-    }
-
     // showing others 
     const others = document.getElementById('others');
     for (const prop in phone.others) {
-        console.log(prop);
-        console.log(phone.others[prop]);
         const li = document.createElement('li');
         others.appendChild(li);
 
         li.innerHTML = `<span class="fw-bold">${prop}: </span>${phone.others[prop]}`;
+    }
+
+    // showing main features
+    const featuresField = document.getElementById('main-features');
+    for (const prop in phone.mainFeatures) {
+        const li = document.createElement('li');
+        featuresField.appendChild(li);
+
+        li.innerHTML = `<span class="fw-bold">${prop}: </span>${phone.mainFeatures[prop]}`;
     }
 }

@@ -4,6 +4,9 @@
 }
 
 /* search input group */
+#input-group {
+    width: 54.5%;
+}
 #search-button {
     background-color: #800080;
     color: white;
@@ -16,8 +19,11 @@
     border-radius: 25px;
 }
 
-/* phone details */
-
+/* spinner */
+#spinner {
+    display: none;
+    color:#800080;
+}
 
 /* phones container / search results */
 #phones-container .phone img {
