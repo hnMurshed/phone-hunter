@@ -58,14 +58,16 @@ const displayPhoneDetails = phone => {
 
     // displaying phone details
     div.innerHTML = `
-        <div class="card" style="width: 28rem;">
-        <img src="${phone.image}" class="card-img-top" alt="${phone.name}">
+        <div class="card" style="width: 38rem;">
+        <img width="400px" src="${phone.image}" class="mx-auto mt-3" alt="${phone.name}">
             <div class="card-body">
                 <h4 class="card-title">${phone.name}</h4>
                 <p class="m-0"><span class="fw-bold">Brand: </span>${phone.brand}</p>
                 <p class="m-0"><span class="fw-bold">Release Date: </span>${phone.releaseDate ? phone.releaseDate: 'Null'}</p>
-                <p class="m-0 fw-bold mt-2">Main Features:</p>
+                <p class="m-0 fw-bold my-3">Main Features:</p>
                 <ul id="main-features"></ul>
+                <p class="m-0 fw-bold my-3">Others:</p>
+                <ul id="others"></ul>
             </div>
         </div>
     `;
@@ -79,5 +81,16 @@ const displayPhoneDetails = phone => {
         featuresField.appendChild(li);
 
         li.innerHTML = `<span class="fw-bold">${prop}: </span>${phone.mainFeatures[prop]}`;
+    }
+
+    // showing others 
+    const others = document.getElementById('others');
+    for (const prop in phone.others) {
+        console.log(prop);
+        console.log(phone.others[prop]);
+        const li = document.createElement('li');
+        others.appendChild(li);
+
+        li.innerHTML = `<span class="fw-bold">${prop}: </span>${phone.others[prop]}`;
     }
 }

@@ -1,7 +1,9 @@
+/* header */
 #brand-name span {
     color:#800080;
 }
 
+/* search input group */
 #search-button {
     background-color: #800080;
     color: white;
@@ -14,6 +16,10 @@
     border-radius: 25px;
 }
 
+/* phone details */
+
+
+/* phones container / search results */
 #phones-container .phone img {
     border-radius: 15px;
 }
