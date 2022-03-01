@@ -7,11 +7,11 @@
 #input-group {
     width: 38rem;
 }
-#search-button {
+.btn-custom-style {
     background-color: #800080;
     color: white;
 }
-#search-button:hover {
+.btn-custom-style:hover {
     background-color: #a853a8;
 }
 
@@ -51,18 +51,15 @@
     border-radius: 15px;
 }
 
-#phones-container .phone a {
-    background-color: #800080;
-}
-#phones-container .phone a:hover {
-    background-color: #a853a8;
-}
-
 /* view all button */
 #view-all-btn {
     display: none;
     background-color: #800080;
 }
+#view-all-btn:hover {
+    background-color: #a853a8;
+}
+
 
 
 

@@ -56,7 +56,7 @@ const displayPhones = phones => {
                 <div class="card-body text-center text-sm-start">
                     <h4 class="card-title fw-bold">${phone.phone_name}</h4>
                     <p class="card-text"><span class="fw-bold">Brand: </span>${phone.brand}</p>
-                    <a href="#phone-details" onclick="phoneDetails('${phone.slug}')" class="btn btn-primary border-0">View Details</a>
+                    <a href="#phone-details" onclick="phoneDetails('${phone.slug}')" class="btn btn-primary btn-custom-style border-0">View Details</a>
                 </div>
             </div>
         `
