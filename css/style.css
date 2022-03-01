@@ -30,3 +30,19 @@
 #phones-container .phone a:hover {
     background-color: #a853a8;
 }
+
+
+
+
+/* responsive */
+
+@media screen and (max-width: 576px) {
+    #input-group {
+        width: 90%;
+    }
+}
+@media screen and (max-width: 768px) {
+    #input-group {
+        width: 100%;
+    }
+}

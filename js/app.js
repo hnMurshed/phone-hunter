@@ -30,7 +30,7 @@ const displayPhones = phones => {
         div.innerHTML = `
             <div class="phone card p-2">
                 <img src="${phone.image}" class="card-img-top" alt="${phone.phone_name}">
-                <div class="card-body">
+                <div class="card-body text-center text-sm-start">
                     <h4 class="card-title fw-bold">${phone.phone_name}</h4>
                     <p class="card-text"><span class="fw-bold">Brand: </span>${phone.brand}</p>
                     <a href="#phone-details" onclick="phoneDetails('${phone.slug}')" class="btn btn-primary border-0">View Details</a>
@@ -54,12 +54,14 @@ const displayPhoneDetails = phone => {
     phoneDetailsField.textContent = '';
 
     const div = document.createElement('div');
+    div.classList.add('d-flex', 'justify-content-center')
     phoneDetailsField.appendChild(div);
+
 
     // displaying phone details
     div.innerHTML = `
         <div class="card" style="width: 38rem;">
-        <img width="400px" src="${phone.image}" class="mx-auto mt-3" alt="${phone.name}">
+        <img width="350px" src="${phone.image}" class="mx-auto mt-3" alt="${phone.name}">
             <div class="card-body">
                 <h4 class="card-title">${phone.name}</h4>
                 <p class="m-0"><span class="fw-bold">Brand: </span>${phone.brand}</p>

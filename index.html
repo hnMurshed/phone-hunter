@@ -23,17 +23,17 @@
     <main class="container">
         <section>
             <!-- search input and button -->
-            <div class="input-group input-group-lg mb-4 mx-auto" style="width: 38rem;">
+            <div id="input-group" class="input-group input-group-lg mb-4 mx-auto">
                 <input id="search-input" type="text" class="form-control" placeholder="Search phone" aria-label="Search phone" aria-describedby="search-button">
                 <button onclick="getSearchText()" class="btn btn-outline-secondary" type="button" id="search-button">Search</button>
             </div>
 
             <!-- phone details -->
-            <div id="phone-details" class="d-flex justify-content-center"></div>
+            <div id="phone-details"></div>
             
 
             <!-- search result -->
-            <div id="phones-container" class="row row-cols-1 row-cols-md-3 g-4 my-4">
+            <div id="phones-container" class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4 my-4">
                 
             </div>
         </section>
