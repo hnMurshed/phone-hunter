@@ -43,6 +43,12 @@
     background-color: #a853a8;
 }
 
+/* view all button */
+#view-all-btn {
+    display: none;
+    background-color: #800080;
+}
+
 
 
 

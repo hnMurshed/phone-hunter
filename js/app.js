@@ -19,6 +19,9 @@ const getSearchText = () => {
 
     // hide not found message
     document.getElementById('not-found-message').style.display = 'none';
+
+    // hide view button
+    document.getElementById('view-all-btn').style.display = 'none';
 }
 
 // load phones
@@ -35,7 +38,6 @@ const loadPhones = (searchText) => {
 
 // display phones
 const displayPhones = phones => {
-    
     const phonesContainer = document.getElementById('phones-container');
     phonesContainer.textContent = '';
 
@@ -47,7 +49,6 @@ const displayPhones = phones => {
     phones.forEach(phone => {
         const div = document.createElement('div');
         div.classList.add('col');
-        phonesContainer.appendChild(div)
 
         div.innerHTML = `
             <div class="phone card p-2">
@@ -59,7 +60,14 @@ const displayPhones = phones => {
                 </div>
             </div>
         `
+        if (phones.indexOf(phone) > 19) {
+            document.getElementById('view-all-btn').style.display = 'block';
+        }
+        else {
+            phonesContainer.appendChild(div)
+        }
     })
+    
     // hide spinnre
     displayControl('spinner', 'none');
     // display phones
