@@ -9,3 +9,18 @@
 #search-button:hover {
     background-color: #a853a8;
 }
+
+#phones-container .phone {
+    border-radius: 35px;
+}
+
+#phones-container .phone img {
+    border-radius: 15px;
+}
+
+#phones-container .phone a {
+    background-color: #800080;
+}
+#phones-container .phone a:hover {
+    background-color: #a853a8;
+}
