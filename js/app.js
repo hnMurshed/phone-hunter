@@ -66,6 +66,16 @@ const displayPhones = phones => {
         else {
             phonesContainer.appendChild(div)
         }
+
+        // display the rest phones
+        document.getElementById('view-all-btn').addEventListener('click', function(){
+            if (phones.indexOf(phone) > 19) {
+                phonesContainer.appendChild(div)
+
+                // hide view all button
+                document.getElementById('view-all-btn').style.display = 'none';
+            }
+        })
     })
     
     // hide spinnre
